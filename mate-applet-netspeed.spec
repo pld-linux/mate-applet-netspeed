@@ -20,6 +20,8 @@ Requires:	mate-panel
 Obsoletes:	mate-netspeed
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_libexecdir	%{_libdir}/mate-panel
+
 %description
 MATE netspeed is an applet that shows how much traffic occurs on a
 specified network device.
@@ -61,7 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS README
-%attr(755,root,root) %{_libdir}/mate-netspeed-applet
+%attr(755,root,root) %{_libdir}/mate-panel/mate-netspeed-applet
 %{_datadir}/dbus-1/services/org.mate.panel.applet.NetspeedAppletFactory.service
 %{_datadir}/glib-2.0/schemas/org.mate.panel.applet.netspeed.gschema.xml
 %{_iconsdir}/hicolor/*/apps/mate-netspeed-applet.*
