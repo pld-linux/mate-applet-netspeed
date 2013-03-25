@@ -1,12 +1,12 @@
 %define		pname	mate-netspeed
 Summary:	MATE netspeed
 Name:		mate-applet-netspeed
-Version:	1.5.1
+Version:	1.5.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.5/%{pname}-%{version}.tar.xz
-# Source0-md5:	8d7c4657f31dd06b8effa17d429fd901
+# Source0-md5:	992945ff8c48bceeb13e52a54039cc6d
 URL:		http://www.mate-desktop.org/
 BuildRequires:	docbook-dtd44-xml
 BuildRequires:	gtk+2-devel
@@ -16,7 +16,7 @@ BuildRequires:	mate-doc-utils
 BuildRequires:	mate-panel-devel
 BuildRequires:	rpmbuild(find_lang) >= 1.36
 Requires:	glib2 >= 1:2.26.0
-Requires:	mate-panel
+Requires:	mate-panel >= 1.5
 Obsoletes:	mate-netspeed
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,9 +43,6 @@ NOCONFIGURE=1 ./autogen.sh
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-# mate < 1.5 did not exist in pld, avoid dependency on mate-conf
-%{__rm} $RPM_BUILD_ROOT%{_datadir}/MateConf/gsettings/mate-netspeed.convert
 
 %find_lang %{name} --with-omf --with-mate --all-name
 
