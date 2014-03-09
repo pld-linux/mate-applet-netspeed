@@ -2,12 +2,12 @@
 Summary:	MATE netspeed applet
 Summary(pl.UTF-8):	Aplet netspeed dla środowiska MATE
 Name:		mate-applet-netspeed
-Version:	1.6.1
+Version:	1.8.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.6/%{pname}-%{version}.tar.xz
-# Source0-md5:	10b5ae48f17ff17252ca0d22dae85582
+Source0:	http://pub.mate-desktop.org/releases/1.8/%{pname}-%{version}.tar.xz
+# Source0-md5:	7d43e81caccaff6028dac68d274df9f0
 URL:		http://www.mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -19,12 +19,12 @@ BuildRequires:	libgtop-devel >= 1:2.14.2
 BuildRequires:	libiw-devel >= 29
 BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	mate-common
-BuildRequires:	mate-doc-utils
 BuildRequires:	mate-panel-devel >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.36
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+BuildRequires:	yelp-tools
 Requires(post,postun):	glib2 >= 1:2.26.0
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	glib2 >= 1:2.26.0
@@ -67,6 +67,8 @@ netspeed.
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
 
 # mate-netspeed gettext domain, mate_netspeed_applet mate help and omf
 %find_lang %{name} --with-omf --with-mate --all-name
