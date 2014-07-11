@@ -19,7 +19,7 @@ BuildRequires:	libgtop-devel >= 1:2.14.2
 BuildRequires:	libiw-devel >= 29
 BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	mate-common
-BuildRequires:	mate-panel-devel >= 1.5
+BuildRequires:	mate-panel-devel >= 1.7.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.36
 BuildRequires:	tar >= 1:1.22
@@ -31,7 +31,7 @@ Requires:	glib2 >= 1:2.26.0
 Requires:	hicolor-icon-theme
 Requires:	libgtop >= 1:2.14.2
 Requires:	libiw >= 29
-Requires:	mate-panel >= 1.5
+Requires:	mate-panel >= 1.7.0
 Obsoletes:	mate-netspeed
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -57,9 +57,8 @@ netspeed.
 %{__autoheader}
 %{__automake}
 %configure \
-	--disable-silent-rules \
-	--disable-scrollkeeper \
 	--disable-schemas-compile \
+	--disable-silent-rules
 
 %{__make}
 
@@ -68,10 +67,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
-
-# mate-netspeed gettext domain, mate_netspeed_applet mate help and omf
-%find_lang %{name} --with-omf --with-mate --all-name
+# mate-netspeed gettext domain, mate_netspeed_applet mate help
+%find_lang %{name} --with-mate --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
