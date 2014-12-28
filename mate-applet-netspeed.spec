@@ -12,7 +12,7 @@ URL:		http://www.mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	docbook-dtd44-xml
-BuildRequires:	gettext-devel >= 0.10.40
+BuildRequires:	gettext-tools >= 0.10.40
 BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libgtop-devel >= 1:2.14.2
