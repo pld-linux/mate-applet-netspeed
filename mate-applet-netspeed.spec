@@ -2,12 +2,12 @@
 Summary:	MATE netspeed applet
 Summary(pl.UTF-8):	Aplet netspeed dla środowiska MATE
 Name:		mate-applet-netspeed
-Version:	1.8.0
-Release:	3
+Version:	1.10.0
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://pub.mate-desktop.org/releases/1.8/%{pname}-%{version}.tar.xz
-# Source0-md5:	7d43e81caccaff6028dac68d274df9f0
+Source0:	http://pub.mate-desktop.org/releases/1.10/%{pname}-%{version}.tar.xz
+# Source0-md5:	eddc26ee5937316b2ccba62930da9f35
 URL:		http://www.mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -19,6 +19,7 @@ BuildRequires:	libgtop-devel >= 1:2.14.2
 BuildRequires:	libiw-devel >= 29
 BuildRequires:	libtool >= 1:1.4.3
 BuildRequires:	mate-common
+BuildRequires:	mate-desktop-devel >= 1.9.0
 BuildRequires:	mate-panel-devel >= 1.7.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.36
@@ -31,6 +32,7 @@ Requires:	glib2 >= 1:2.26.0
 Requires:	hicolor-icon-theme
 Requires:	libgtop >= 1:2.14.2
 Requires:	libiw >= 29
+Requires:	mate-desktop-libs >= 1.9.0
 Requires:	mate-panel >= 1.7.0
 Obsoletes:	mate-netspeed
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
