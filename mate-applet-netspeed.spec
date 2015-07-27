@@ -2,12 +2,12 @@
 Summary:	MATE netspeed applet
 Summary(pl.UTF-8):	Aplet netspeed dla środowiska MATE
 Name:		mate-applet-netspeed
-Version:	1.10.1
+Version:	1.10.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://pub.mate-desktop.org/releases/1.10/%{pname}-%{version}.tar.xz
-# Source0-md5:	9e0f7160e9a3dc26c163b0e310f03cbe
+# Source0-md5:	0e995beb58a01b9679e404b9bbd2945d
 URL:		http://www.mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
